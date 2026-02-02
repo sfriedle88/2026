@@ -21,7 +21,12 @@
   So instead, let's keep the same 9 cells for every board. 
 */
 
-abstract sig Player {}
+/*
+ASSUMPTIONS:
+- Assuming that the board is only a 3x3
+*/
+
+abstract sig Player {} 
 one sig X, O extends Player {}
 
 /** Cells are fixed indexes. We'll need to constrain their rows and 
@@ -157,6 +162,8 @@ pred balanced[b: Board] {
 // I rewrote this. But notice how I needed to allow >4 Cells!
 cell_board: run { 
     wellformed
+    // Could also do #Cell = 9 instead of "exactly 9 cell" at the bottom
+      // What could be the disadvantage of this? -> look into this 
     some b: Board | {
         balanced[b]
         winning[b, X]
