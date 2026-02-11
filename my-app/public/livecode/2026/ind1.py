@@ -18,13 +18,18 @@ f1()
 
 # Base case (called "initiation" in some textbooks)
 #   FILL: (initial state condition) implies (property goal)
+pred initiation {
+    (x = 1 and y = 1) implies (y >= 1)
+}
 #   FILL: (Does this implication hold? If not, why not?)
-
-
 
 # Inductive case (called "consecution" in some textbooks)
 # Suggestion: 2 states involved, so use x_pre, x_post, y_pre, y_post.
 #   FILL: (P holds of pre-state) and (transition taken) implies (P holds of post-state)
+... (y_pre >= 1 and x_pre >= 0) and (
+    x_post = x_pre + 1 and 
+    y_post = y_pre + x_pre
+    implies (y_post >= 1)
 #   FILL: (Does this implication hold? If not, why not?)
 
 
